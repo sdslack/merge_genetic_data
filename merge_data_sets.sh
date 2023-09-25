@@ -27,13 +27,13 @@ bash /home/sslack@xsede.org/code/immunogenetics_t1d/daisy_complement/ibd_check/c
 
 #Get a list of common markers
 cat ${study1_plink_prefix}_clean.bim ${study2_plink_prefix}_clean.bim | awk '{print $2}' \
-   | sort | uniq -d > ${study1_plink_prefix}_${study1_plink_prefix}_common_snps.txt
+   | sort | uniq -d > ${study1_plink_prefix}_${study2_plink_prefix}_common_snps.txt
 plink --bfile ${study1_plink_prefix}_clean \
-   --extract ${study1_plink_prefix}_${study1_plink_prefix}_common_snps.txt \
+   --extract ${study1_plink_prefix}_${study2_plink_prefix}_common_snps.txt \
    --keep-allele-order \
    --make-bed --out ${study1_plink_prefix}_common
 plink --bfile ${study2_plink_prefix}_clean \
-   --extract ${study1_plink_prefix}_${study1_plink_prefix}_common_snps.txt \
+   --extract ${study1_plink_prefix}_${study2_plink_prefix}_common_snps.txt \
    --keep-allele-order \
    --make-bed --out ${study2_plink_prefix}_common
 
