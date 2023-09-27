@@ -20,9 +20,9 @@ study1_plink_prefix=`basename $study1_plink_in_prefix`
 study2_plink_prefix=`basename $study2_plink_in_prefix` 
 
 #Clean the data sets
-bash /home/sslack@xsede.org/code/immunogenetics_t1d/daisy_complement/ibd_check/clean_data_set.sh \
+bash /home/sslack@xsede.org/code/immunogenetics_t1d/daisy_complement_haplotypes/ibd_check/clean_data_set_keep_strand_amb.sh \
    $study1_plink_in_prefix $study1_plink_prefix
-bash /home/sslack@xsede.org/code/immunogenetics_t1d/daisy_complement/ibd_check/clean_data_set.sh \
+bash /home/sslack@xsede.org/code/immunogenetics_t1d/daisy_complement_haplotypes/ibd_check/clean_data_set_keep_strand_amb.sh \
    $study2_plink_in_prefix $study2_plink_prefix
 
 #Get a list of common markers
